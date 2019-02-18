@@ -39,9 +39,6 @@
 #head {
   color: green;
 }
-#head:hover {
-  cursor: pointer;
-}
 
 #answer {
   color: red
