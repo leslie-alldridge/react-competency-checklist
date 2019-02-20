@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./App.css";
-import HelloWorld from "./BeginnerAnswers/HelloWorld";
-import HelloWorldState from "./BeginnerAnswers/HelloWorldState";
-import Challenge from "./BeginnerAnswers/Challenge";
+import "../App.css";
+import HelloWorld from "../BeginnerAnswers/HelloWorld";
+import HelloWorldState from "../BeginnerAnswers/HelloWorldState";
+import Challenge from "../BeginnerAnswers/Challenge";
 
-class App extends Component {
+class Beginner extends Component {
   state = {
     beginner: false,
     answers: false
@@ -120,4 +120,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Beginner;

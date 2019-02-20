@@ -1,26 +1,24 @@
 import React, { Component } from "react";
-import Beginner from "./Beginner";
+import { Route, Switch } from "react-router-dom";
+import Beginner from "./components/Beginner";
 import MainNav from "./components/MainNav";
 
 class App extends Component {
   state = {
-    beginner: false,
     intermediate: false,
     advanced: false
   };
 
-  toggleClick = () => {
-    this.setState({
-      beginner: !this.state.beginner
-    });
-  };
+ 
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <MainNav />
-          <Beginner />
+            <Switch>
+              <Route path="/" component={MainNav} />
+              <Route  path="/beginner" component={Beginner} />
+            </Switch>
         </header>
       </div>
     );
