@@ -37,10 +37,10 @@ class App extends Component {
               </div>
             </div>
           </section>
+          <h1 className="title is-1 beginner-title">Beginner Projects</h1>
           <div className="columns">
-            <div className="column is-three-quarter">
-              <h1 class="title is-1 beginner-title">Beginner Projects</h1>
-              {this.state.beginner !== true && (
+            {this.state.beginner !== true && (
+              <div className="column is-three-quarters">
                 <button
                   onClick={this.toggleClick}
                   className="button is-large is-primary is-outlined"
@@ -48,49 +48,65 @@ class App extends Component {
                 >
                   Let's Begin!
                 </button>
-              )}
-            </div>
-            {this.state.beginner && (
-              <ol id="list">
-                <li>
-                  Use "Create React App" to quickly create React applications.
-                  Also install the React Dev Tools web browser extension.
-                </li>
-                <li>Create your first component that prints "Hello World"</li>
-                <li>
-                  Add state to your Hello World component. When the user clicks
-                  on the text, hide it.
-                </li>
-                <li>
-                  Pass information to another component as props. For example
-                  your Hello World component can render a child component which
-                  prints Goodbye world via "props.message".
-                </li>
-                <li>
-                  Draw a diagram showing the data flow within your application.
-                  Both within the Hello World component and the data going out
-                  via props.
-                </li>
-                <li>
-                  Challenge: Add a button that when clicked, shows a number on
-                  screen incrementing by +1 every second.
-                </li>
-              </ol>
+              </div>
             )}
-            <div class="tile is-parent column is-one-quarter">
-              <article class="tile is-child notification is-primary">
-                <div class="content">
-                  <p class="title">
+            {this.state.beginner && (
+              <div className="column is-three-quarters">
+                <div className="field-body">
+                  <div className="field">
+                    <div className="control">
+                      <label className="checkbox">
+                        <input type="checkbox" />
+                        Use "Create React App" to quickly create React
+                        applications. Also install the React Dev Tools web
+                        browser extension.
+                      </label>
+                      <label className="checkbox">
+                        <input type="checkbox" />
+                        Create your first component that prints "Hello World"
+                      </label>
+                      <label className="checkbox">
+                        <input type="checkbox" />
+                        Add state to your Hello World component. When the user
+                        clicks on the text, hide it.
+                      </label>
+                      <label className="checkbox">
+                        <input type="checkbox" />
+                        Pass information to another component as props. For
+                        example your Hello World component can render a child
+                        component which prints Goodbye world via
+                        "props.message".
+                      </label>
+                      <label className="checkbox">
+                        <input type="checkbox" />
+                        Draw a diagram showing the data flow within your
+                        application. Both within the Hello World component and
+                        the data going out via props.
+                      </label>
+                      <label className="checkbox">
+                        <input type="checkbox" />
+                        Challenge: Add a button that when clicked, shows a
+                        number on screen incrementing by +1 every second.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div className="tile is-parent column is-one-quarter">
+              <article className="tile is-child notification is-primary">
+                <div className="content">
+                  <p className="title">
                     Please try to do all of these without looking at the answers
                   </p>
                   <button
-                    class="button is-primary is-inverted is-outlined"
+                    className="button is-primary is-inverted is-outlined"
                     onClick={this.toggleAnswers}
                   >
                     {" "}
                     I want answers
                   </button>
-                  <div class="content" />
+                  <div className="content" />
                 </div>
               </article>
             </div>
