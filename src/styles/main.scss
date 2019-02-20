@@ -1,0 +1,33 @@
+// Main Stylesheet
+// colors
+$react-blue: #61dbfb;
+$react-grey: #282c34;
+
+html,
+body {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.hero-body {
+  background: $react-grey;
+}
+
+#begin-button {
+  align-content: center;
+  margin: 2rem;
+  margin-left: 8.5rem;
+}
+
+.beginner-title {
+  margin-top: 3rem;
+  margin-left: 8.5rem;
+}
+
+.tile {
+  margin-right: 3rem;
+}
+
+.field-body {
+  margin-left: 2rem;
+}
