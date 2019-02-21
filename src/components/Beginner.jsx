@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "../App.css";
 import HelloWorld from "../BeginnerAnswers/HelloWorld";
 import HelloWorldState from "../BeginnerAnswers/HelloWorldState";
 import Challenge from "../BeginnerAnswers/Challenge";
+import MainNav from "./MainNav";
 
 class Beginner extends Component {
   state = {
-    beginner: false,
+    beginner: true,
     answers: false
   };
 
@@ -24,6 +25,8 @@ class Beginner extends Component {
 
   render() {
     return (
+      <Fragment>
+        <MainNav/>
       <div className="App">
         <header className="App-header">
           <section className="hero is-medium is-primary is-bold">
@@ -116,6 +119,7 @@ class Beginner extends Component {
           </div>
         </header>
       </div>
+      </Fragment>
     );
   }
 }
