@@ -17,7 +17,9 @@ export default function MainNav() {
                 <a href="/register" className="button is-primary">
                   <strong>Sign up</strong>
                 </a>
-                <a href="/login" className="button is-light">Log in</a>
+                <a href="/login" className="button is-light">
+                  Log in
+                </a>
               </div>
             </div>
           </div>

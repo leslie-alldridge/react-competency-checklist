@@ -1,5 +1,5 @@
-import React from 'react'
+import React from "react";
 
-export default function GoodbyeWorld (props)  {
-    return <p>{props.message}</p>
+export default function GoodbyeWorld(props) {
+  return <p>{props.message}</p>;
 }
