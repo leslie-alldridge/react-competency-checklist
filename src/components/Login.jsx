@@ -40,7 +40,7 @@ export default class Login extends Component {
                     <img
                       className="form-image"
                       alt="placeholder"
-                      src="/avatar.png"
+                      src="/images/avatar.png"
                     />
                   </figure>
                   <form>

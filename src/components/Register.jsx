@@ -35,7 +35,7 @@ export default class Register extends Component {
                     <img
                       className="form-image"
                       alt="placeholder"
-                      src="/avatar.png"
+                      src="/images/avatar.png"
                     />
                   </figure>
                   <form>
