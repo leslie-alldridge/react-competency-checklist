@@ -1,26 +1,21 @@
 import React, { Component } from "react";
-import Beginner from "./Beginner";
-import MainNav from "./components/MainNav";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Login, Register, Beginner, MainNav } from "./components/Index";
 
 class App extends Component {
-  state = {
-    beginner: false,
-    intermediate: false,
-    advanced: false
-  };
-
-  toggleClick = () => {
-    this.setState({
-      beginner: !this.state.beginner
-    });
-  };
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <MainNav />
-          <Beginner />
+          <BrowserRouter>
+            <Switch>
+              {/* Should we have a landing page here (Route "/") so users know what this website is all about? */}
+              <Route path="/" exact component={MainNav} />
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path="/beginner" component={Beginner} />
+            </Switch>
+          </BrowserRouter>
         </header>
       </div>
     );

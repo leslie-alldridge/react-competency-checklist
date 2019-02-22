@@ -1,5 +1,5 @@
-import React from 'react'
+import React from "react";
 
-export default function HelloWorld ()  {
-    return <p>Hello World!</p>
+export default function HelloWorld() {
+  return <p>Hello World!</p>;
 }
