@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MainNav from "./MainNav";
 
 export default class Register extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ export default class Register extends Component {
   render() {
     return (
       <div>
+        <MainNav />
         <section className="hero is-success is-fullheight">
           <div className="hero-body">
             <div className="container has-text-centered">
@@ -30,7 +32,11 @@ export default class Register extends Component {
                 </p>
                 <div className="box">
                   <figure className="avatar">
-                    <img alt="placeholder" src="/react.svg" />
+                    <img
+                      className="form-image"
+                      alt="placeholder"
+                      src="/avatar.png"
+                    />
                   </figure>
                   <form>
                     <div className="field">

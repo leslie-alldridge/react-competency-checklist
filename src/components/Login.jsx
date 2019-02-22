@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MainNav from "./MainNav";
 
 export default class Login extends Component {
   constructor(props) {
@@ -25,21 +26,28 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <section class="hero is-success is-fullheight">
-          <div class="hero-body">
-            <div class="container has-text-centered">
-              <div class="column is-4 is-offset-4">
-                <h3 class="title has-text-grey">Login</h3>
-                <p class="subtitle has-text-grey">Please login to proceed.</p>
-                <div class="box">
-                  <figure class="avatar">
-                    <img alt="placeholder" src="/react.svg" />
+        <MainNav />
+        <section className="hero is-success is-fullheight">
+          <div className="hero-body">
+            <div className="container has-text-centered">
+              <div className="column is-4 is-offset-4">
+                <h3 className="title has-text-grey">Login</h3>
+                <p className="subtitle has-text-grey">
+                  Please login to proceed.
+                </p>
+                <div className="box">
+                  <figure className="avatar">
+                    <img
+                      className="form-image"
+                      alt="placeholder"
+                      src="/avatar.png"
+                    />
                   </figure>
                   <form>
-                    <div class="field">
-                      <div class="control">
+                    <div className="field">
+                      <div className="control">
                         <input
-                          class="input is-large"
+                          className="input is-large"
                           type="email"
                           name="email"
                           placeholder="Your Email"
@@ -49,10 +57,10 @@ export default class Login extends Component {
                       </div>
                     </div>
 
-                    <div class="field">
-                      <div class="control">
+                    <div className="field">
+                      <div className="control">
                         <input
-                          class="input is-large"
+                          className="input is-large"
                           type="password"
                           name="password"
                           placeholder="Your Password"
@@ -60,8 +68,8 @@ export default class Login extends Component {
                         />
                       </div>
                     </div>
-                    <div class="field">
-                      <label class="checkbox">
+                    <div className="field">
+                      <label className="checkbox">
                         <input
                           type="checkbox"
                           name="remember"
@@ -70,12 +78,12 @@ export default class Login extends Component {
                         Remember me
                       </label>
                     </div>
-                    <button class="button is-block is-info is-large is-fullwidth">
+                    <button className="button is-block is-info is-large is-fullwidth">
                       Login
                     </button>
                   </form>
                 </div>
-                <p class="has-text-grey">
+                <p className="has-text-grey">
                   <a href="/register">Sign Up</a> &nbsp;·&nbsp;
                   <a href="/forgot">Forgot Password</a> &nbsp;·&nbsp;
                   <a href="/help">Need Help?</a>
