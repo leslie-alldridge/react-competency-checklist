@@ -31,10 +31,13 @@ function loginError(message) {
 }
 
 export default function loginUser(creds) {
+  console.log("hit");
+  console.log(creds);
+
   return dispatch => {
     dispatch(requestLogin(creds));
     return axios
-      .post("/signin", creds)
+      .post("/login", creds)
       .then(response => {
         if (response.data.message !== "Authentication successful.") {
           dispatch(loginError(response.data.message));

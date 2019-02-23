@@ -26,9 +26,9 @@ class Login extends Component {
     });
   };
 
-  loginUser() {
+  loginUser = () => {
     this.props.loginUser(this.state);
-  }
+  };
 
   render() {
     return (
