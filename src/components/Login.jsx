@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import MainNav from "./MainNav";
+import { connect } from "react-redux";
 
-export default class Login extends Component {
+import MainNav from "./MainNav";
+import { loginUser } from "../actions";
+
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,6 +25,10 @@ export default class Login extends Component {
       remember: this.state.remember === "on" ? "off" : "on"
     });
   };
+
+  loginUser() {
+    this.props.loginUser(this.state);
+  }
 
   render() {
     return (
@@ -78,7 +85,10 @@ export default class Login extends Component {
                         Remember me
                       </label>
                     </div>
-                    <button className="button is-block is-info is-large is-fullwidth">
+                    <button
+                      onClick={this.loginUser}
+                      className="button is-block is-info is-large is-fullwidth"
+                    >
                       Login
                     </button>
                   </form>
@@ -96,3 +106,16 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    loginUser: creds => {
+      return dispatch(loginUser(creds));
+    }
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Login);

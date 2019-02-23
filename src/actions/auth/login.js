@@ -30,7 +30,7 @@ function loginError(message) {
   };
 }
 
-export function loginUser(creds) {
+export default function loginUser(creds) {
   return dispatch => {
     dispatch(requestLogin(creds));
     return axios
