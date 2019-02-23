@@ -7,7 +7,7 @@ export default function MainNav() {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
-            <img alt="react" src="/react.svg" width="112" height="28" />
+            <img alt="react" src="/images/react.svg" width="112" height="28" />
           </a>
         </div>
         <div className="navbar-menu">
