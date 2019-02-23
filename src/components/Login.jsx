@@ -84,9 +84,9 @@ export default class Login extends Component {
                   </form>
                 </div>
                 <p className="has-text-grey">
-                  <a href="/register">Sign Up</a> &nbsp;·&nbsp;
-                  <a href="/forgot">Forgot Password</a> &nbsp;·&nbsp;
-                  <a href="/help">Need Help?</a>
+                  <a href="#/register">Sign Up</a> &nbsp;·&nbsp;
+                  <a href="#/forgot">Forgot Password</a> &nbsp;·&nbsp;
+                  <a href="#/help">Need Help?</a>
                 </p>
               </div>
             </div>

@@ -93,8 +93,8 @@ export default class Register extends Component {
                   </form>
                 </div>
                 <p className="has-text-grey">
-                  <a href="/login">Login</a> &nbsp;·&nbsp;
-                  <a href="/help">Need Help?</a>
+                  <a href="#/login">Login</a> &nbsp;·&nbsp;
+                  <a href="#/help">Need Help?</a>
                 </p>
               </div>
             </div>

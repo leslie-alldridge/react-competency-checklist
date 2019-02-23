@@ -32026,11 +32026,11 @@ function (_Component) {
       }, "Login"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "has-text-grey"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/register"
+        href: "#/register"
       }, "Sign Up"), " \xA0\xB7\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/forgot"
+        href: "#/forgot"
       }, "Forgot Password"), " \xA0\xB7\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/help"
+        href: "#/help"
       }, "Need Help?")))))));
     }
   }]);
@@ -32082,10 +32082,10 @@ function MainNav() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "buttons"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "/register",
+    href: "#/register",
     className: "button is-primary"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Sign up")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "/login",
+    href: "#/login",
     className: "button is-light"
   }, "Log in")))))));
 }
@@ -32223,9 +32223,9 @@ function (_Component) {
       }, "Register"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "has-text-grey"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/login"
+        href: "#/login"
       }, "Login"), " \xA0\xB7\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/help"
+        href: "#/help"
       }, "Need Help?")))))));
     }
   }]);
