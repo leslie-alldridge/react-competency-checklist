@@ -14,10 +14,10 @@ export default function MainNav() {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a href="/register" className="button is-primary">
+                <a href="#/register" className="button is-primary">
                   <strong>Sign up</strong>
                 </a>
-                <a href="/login" className="button is-light">
+                <a href="#/login" className="button is-light">
                   Log in
                 </a>
               </div>
