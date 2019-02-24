@@ -11,7 +11,9 @@ server.use(bodyParser.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static(path.join(__dirname, "../public")));
 
-server.get("/", (req, res) => {
+server.post("/login", (req, res) => {
+  console.log(req.body);
+
   console.log("found the express server");
 });
 

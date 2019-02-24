@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
 import "../App.css";
-import HelloWorld from "../BeginnerAnswers/HelloWorld";
-import HelloWorldState from "../BeginnerAnswers/HelloWorldState";
-import Challenge from "../BeginnerAnswers/Challenge";
+
+import HelloWorld from "../../AnswersAndDiagrams/BeginnerAnswers/HelloWorld";
+import HelloWorldState from "../../AnswersAndDiagrams/BeginnerAnswers/HelloWorldState";
+import Challenge from "../../AnswersAndDiagrams/BeginnerAnswers/Challenge";
 import MainNav from "./MainNav";
 
 class Beginner extends Component {
