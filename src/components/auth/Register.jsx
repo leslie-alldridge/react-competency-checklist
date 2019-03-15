@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
+import { registerUser } from "../../actions/auth/register";
 import MainNav from "../MainNav";
 
-export default class Register extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +23,13 @@ export default class Register extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log("dispatching");
+    let { username, email, password } = this.state;
+    let creds = {
+      username,
+      email,
+      password
+    };
+    this.props.registerUser(creds);
   };
 
   render() {
@@ -110,3 +118,14 @@ export default class Register extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    registerUser: () => {}
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Register);

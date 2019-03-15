@@ -37148,6 +37148,74 @@ function loginUser(creds) {
 
 /***/ }),
 
+/***/ "./src/actions/auth/register.js":
+/*!**************************************!*\
+  !*** ./src/actions/auth/register.js ***!
+  \**************************************/
+/*! exports provided: REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE, receiveRegister, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_REQUEST", function() { return REGISTER_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_SUCCESS", function() { return REGISTER_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_FAILURE", function() { return REGISTER_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveRegister", function() { return receiveRegister; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return registerUser; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//actions go here
+
+var REGISTER_REQUEST = "REGISTER_REQUEST";
+var REGISTER_SUCCESS = "REGISTER_SUCCESS";
+var REGISTER_FAILURE = "REGISTER_FAILURE";
+
+function requestRegister() {
+  return {
+    type: REGISTER_REQUEST,
+    isFetching: true,
+    isAuthenticated: false
+  };
+}
+
+function receiveRegister(user) {
+  return {
+    type: REGISTER_SUCCESS,
+    isFetching: false,
+    isAuthenticated: true,
+    user: user
+  };
+}
+
+function registerError(message) {
+  return {
+    type: REGISTER_FAILURE,
+    isFetching: false,
+    isAuthenticated: false,
+    message: message
+  };
+}
+
+function registerUser(creds) {
+  console.log("hit");
+  console.log(creds);
+  return function (dispatch) {
+    dispatch(requestRegister(creds));
+    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/register", creds).then(function (response) {
+      if (response.data.message !== "Authentication successful.") {
+        dispatch(registerError(response.data.message));
+        return Promise.reject(response.data.message);
+      } else {
+        dispatch(receiveRegister(response.data));
+      }
+    }).catch(function (err) {
+      return dispatch(registerError(err));
+    });
+  };
+}
+
+/***/ }),
+
 /***/ "./src/actions/index.js":
 /*!******************************!*\
   !*** ./src/actions/index.js ***!
@@ -37586,11 +37654,11 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Register; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _MainNav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../MainNav */ "./src/components/MainNav.jsx");
+/* harmony import */ var _actions_auth_register__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/auth/register */ "./src/actions/auth/register.js");
+/* harmony import */ var _MainNav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../MainNav */ "./src/components/MainNav.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37615,6 +37683,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Register =
 /*#__PURE__*/
 function (_Component) {
@@ -37633,7 +37702,17 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleSubmit", function (e) {
       e.preventDefault();
-      console.log("dispatching");
+      var _this$state = _this.state,
+          username = _this$state.username,
+          email = _this$state.email,
+          password = _this$state.password;
+      var creds = {
+        username: username,
+        email: email,
+        password: password
+      };
+
+      _this.props.registerUser(creds);
     });
 
     _this.state = {
@@ -37648,7 +37727,7 @@ function (_Component) {
   _createClass(Register, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MainNav__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MainNav__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "hero is-success is-fullheight"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hero-body"
@@ -37727,7 +37806,13 @@ function (_Component) {
   return Register;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    registerUser: function registerUser() {}
+  };
+};
 
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, mapDispatchToProps)(Register));
 
 /***/ }),
 
@@ -37809,9 +37894,11 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return auth; });
 /* harmony import */ var _actions_auth_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/auth/login */ "./src/actions/auth/login.js");
+/* harmony import */ var _actions_auth_register__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/auth/register */ "./src/actions/auth/register.js");
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 var initialState = {
@@ -37826,6 +37913,7 @@ function auth() {
 
   switch (action.type) {
     case _actions_auth_login__WEBPACK_IMPORTED_MODULE_0__["LOGIN_REQUEST"]:
+    case _actions_auth_register__WEBPACK_IMPORTED_MODULE_1__["REGISTER_REQUEST"]:
       return _objectSpread({}, state, {
         isFetching: true,
         isAuthenticated: false,
@@ -37833,6 +37921,7 @@ function auth() {
       });
 
     case _actions_auth_login__WEBPACK_IMPORTED_MODULE_0__["LOGIN_SUCCESS"]:
+    case _actions_auth_register__WEBPACK_IMPORTED_MODULE_1__["REGISTER_SUCCESS"]:
       return _objectSpread({}, state, {
         isFetching: false,
         isAuthenticated: true,
@@ -37840,6 +37929,7 @@ function auth() {
       });
 
     case _actions_auth_login__WEBPACK_IMPORTED_MODULE_0__["LOGIN_FAILURE"]:
+    case _actions_auth_register__WEBPACK_IMPORTED_MODULE_1__["REGISTER_FAILURE"]:
       return _objectSpread({}, state, {
         isFetching: false,
         isAuthenticated: false,
