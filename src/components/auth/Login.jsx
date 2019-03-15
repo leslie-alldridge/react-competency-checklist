@@ -1,14 +1,16 @@
 import React, { Component } from "react";
-import MainNav from "./MainNav";
+import { connect } from "react-redux";
 
-export default class Register extends Component {
+import MainNav from "../MainNav";
+import { loginUser } from "../../actions";
+
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
       email: "",
       password: "",
-      password2: ""
+      remember: "off"
     };
   }
 
@@ -16,6 +18,16 @@ export default class Register extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+  };
+
+  handleCheck = () => {
+    this.setState({
+      remember: this.state.remember === "on" ? "off" : "on"
+    });
+  };
+
+  loginUser = () => {
+    this.props.loginUser(this.state);
   };
 
   render() {
@@ -26,9 +38,9 @@ export default class Register extends Component {
           <div className="hero-body">
             <div className="container has-text-centered">
               <div className="column is-4 is-offset-4">
-                <h3 className="title has-text-grey">Register</h3>
+                <h3 className="title has-text-grey">Login</h3>
                 <p className="subtitle has-text-grey">
-                  Please register to proceed.
+                  Please login to proceed.
                 </p>
                 <div className="box">
                   <figure className="avatar">
@@ -43,22 +55,10 @@ export default class Register extends Component {
                       <div className="control">
                         <input
                           className="input is-large"
-                          type="text"
-                          placeholder="Username"
-                          autoFocus=""
-                          name="username"
-                          onChange={this.handleInputChange}
-                        />
-                      </div>
-                    </div>
-                    <div className="field">
-                      <div className="control">
-                        <input
-                          className="input is-large"
                           type="email"
-                          placeholder="Email"
-                          autoFocus=""
                           name="email"
+                          placeholder="Your Email"
+                          autoFocus=""
                           onChange={this.handleInputChange}
                         />
                       </div>
@@ -69,31 +69,33 @@ export default class Register extends Component {
                         <input
                           className="input is-large"
                           type="password"
-                          placeholder="Password"
                           name="password"
+                          placeholder="Your Password"
                           onChange={this.handleInputChange}
                         />
                       </div>
                     </div>
                     <div className="field">
-                      <div className="control">
+                      <label className="checkbox">
                         <input
-                          className="input is-large"
-                          type="password"
-                          placeholder="Confirm Password"
-                          name="password2"
-                          onChange={this.handleInputChange}
+                          type="checkbox"
+                          name="remember"
+                          onClick={this.handleCheck}
                         />
-                      </div>
+                        Remember me
+                      </label>
                     </div>
-
-                    <button className="button is-block is-info is-large is-fullwidth">
-                      Register
+                    <button
+                      onClick={this.loginUser}
+                      className="button is-block is-info is-large is-fullwidth"
+                    >
+                      Login
                     </button>
                   </form>
                 </div>
                 <p className="has-text-grey">
-                  <a href="#/login">Login</a> &nbsp;·&nbsp;
+                  <a href="#/register">Sign Up</a> &nbsp;·&nbsp;
+                  <a href="#/forgot">Forgot Password</a> &nbsp;·&nbsp;
                   <a href="#/help">Need Help?</a>
                 </p>
               </div>
@@ -104,3 +106,16 @@ export default class Register extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    loginUser: creds => {
+      return dispatch(loginUser(creds));
+    }
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Login);

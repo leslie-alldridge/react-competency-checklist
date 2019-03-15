@@ -37372,10 +37372,60 @@ function LandingPage() {
 
 /***/ }),
 
-/***/ "./src/components/Login.jsx":
-/*!**********************************!*\
-  !*** ./src/components/Login.jsx ***!
-  \**********************************/
+/***/ "./src/components/MainNav.jsx":
+/*!************************************!*\
+  !*** ./src/components/MainNav.jsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MainNav; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bulma_components_full__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bulma-components/full */ "./node_modules/react-bulma-components/full/index.js");
+/* harmony import */ var react_bulma_components_full__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bulma_components_full__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function MainNav() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    className: "navbar",
+    role: "navigation",
+    "aria-label": "main navigation"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-brand"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "navbar-item",
+    href: "/"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    alt: "react",
+    src: "/images/react.svg",
+    width: "112",
+    height: "28"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-menu"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-end"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "buttons"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#/register",
+    className: "button is-primary"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Sign up")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#/login",
+    className: "button is-light"
+  }, "Log in")))))));
+}
+
+/***/ }),
+
+/***/ "./src/components/auth/Login.jsx":
+/*!***************************************!*\
+  !*** ./src/components/auth/Login.jsx ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37384,8 +37434,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _MainNav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MainNav */ "./src/components/MainNav.jsx");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions */ "./src/actions/index.js");
+/* harmony import */ var _MainNav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../MainNav */ "./src/components/MainNav.jsx");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions */ "./src/actions/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37527,60 +37577,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./src/components/MainNav.jsx":
-/*!************************************!*\
-  !*** ./src/components/MainNav.jsx ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MainNav; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_bulma_components_full__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bulma-components/full */ "./node_modules/react-bulma-components/full/index.js");
-/* harmony import */ var react_bulma_components_full__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bulma_components_full__WEBPACK_IMPORTED_MODULE_1__);
-
-
-function MainNav() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    className: "navbar",
-    role: "navigation",
-    "aria-label": "main navigation"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-brand"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "navbar-item",
-    href: "/"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    alt: "react",
-    src: "/images/react.svg",
-    width: "112",
-    height: "28"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-menu"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-end"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "buttons"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#/register",
-    className: "button is-primary"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Sign up")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#/login",
-    className: "button is-light"
-  }, "Log in")))))));
-}
-
-/***/ }),
-
-/***/ "./src/components/Register.jsx":
-/*!*************************************!*\
-  !*** ./src/components/Register.jsx ***!
-  \*************************************/
+/***/ "./src/components/auth/Register.jsx":
+/*!******************************************!*\
+  !*** ./src/components/auth/Register.jsx ***!
+  \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37589,7 +37589,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Register; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _MainNav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainNav */ "./src/components/MainNav.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _MainNav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../MainNav */ "./src/components/MainNav.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37613,6 +37614,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Register =
 /*#__PURE__*/
 function (_Component) {
@@ -37629,6 +37631,11 @@ function (_Component) {
       _this.setState(_defineProperty({}, e.target.name, e.target.value));
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleSubmit", function (e) {
+      e.preventDefault();
+      console.log("dispatching");
+    });
+
     _this.state = {
       username: "",
       email: "",
@@ -37641,7 +37648,7 @@ function (_Component) {
   _createClass(Register, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MainNav__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MainNav__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "hero is-success is-fullheight"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hero-body"
@@ -37661,7 +37668,9 @@ function (_Component) {
         className: "form-image",
         alt: "placeholder",
         src: "/images/avatar.png"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "control"
@@ -37731,11 +37740,11 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Login_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Login.jsx */ "./src/components/Login.jsx");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Login", function() { return _Login_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+/* harmony import */ var _auth_Login_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auth/Login.jsx */ "./src/components/auth/Login.jsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Login", function() { return _auth_Login_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
-/* harmony import */ var _Register_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Register.jsx */ "./src/components/Register.jsx");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Register", function() { return _Register_jsx__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+/* harmony import */ var _auth_Register_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth/Register.jsx */ "./src/components/auth/Register.jsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Register", function() { return _auth_Register_jsx__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
 /* harmony import */ var _Beginner_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Beginner.jsx */ "./src/components/Beginner.jsx");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Beginner", function() { return _Beginner_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]; });
