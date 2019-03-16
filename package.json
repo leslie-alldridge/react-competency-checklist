@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
+    "bcrypt": "^3.0.4",
     "bulma-start": "^0.0.3",
     "cors": "^2.8.5",
     "css-loader": "^2.1.0",
