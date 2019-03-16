@@ -31,14 +31,14 @@ function registerError(message) {
   };
 }
 
-export default function registerUser(creds) {
+export function registerUser(creds) {
   console.log("hit");
   console.log(creds);
 
   return dispatch => {
     dispatch(requestRegister(creds));
     return axios
-      .post("/register", creds)
+      .post("/auth/register", creds)
       .then(response => {
         if (response.data.message !== "Authentication successful.") {
           dispatch(registerError(response.data.message));

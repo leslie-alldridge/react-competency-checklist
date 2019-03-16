@@ -121,7 +121,9 @@ class Register extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    registerUser: () => {}
+    registerUser: creds => {
+      dispatch(registerUser(creds));
+    }
   };
 };
 

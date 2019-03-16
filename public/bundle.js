@@ -37152,7 +37152,7 @@ function loginUser(creds) {
 /*!**************************************!*\
   !*** ./src/actions/auth/register.js ***!
   \**************************************/
-/*! exports provided: REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE, receiveRegister, default */
+/*! exports provided: REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE, receiveRegister, registerUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37161,7 +37161,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_SUCCESS", function() { return REGISTER_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_FAILURE", function() { return REGISTER_FAILURE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveRegister", function() { return receiveRegister; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return registerUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerUser", function() { return registerUser; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //actions go here
@@ -37201,7 +37201,7 @@ function registerUser(creds) {
   console.log(creds);
   return function (dispatch) {
     dispatch(requestRegister(creds));
-    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/register", creds).then(function (response) {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/auth/register", creds).then(function (response) {
       if (response.data.message !== "Authentication successful.") {
         dispatch(registerError(response.data.message));
         return Promise.reject(response.data.message);
@@ -37808,7 +37808,9 @@ function (_Component) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    registerUser: function registerUser() {}
+    registerUser: function registerUser(creds) {
+      dispatch(Object(_actions_auth_register__WEBPACK_IMPORTED_MODULE_2__["registerUser"])(creds));
+    }
   };
 };
 
